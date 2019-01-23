@@ -4,7 +4,7 @@ using namespace std;
 
 priority_queue<int, vector<int>, greater<int>> q;
 int n, b[1000010], cnt = 0, ptr;
-pii a[1000010];
+pair<int, int> a[1000010];
 
 int main() {
     scanf("%d", &n);
