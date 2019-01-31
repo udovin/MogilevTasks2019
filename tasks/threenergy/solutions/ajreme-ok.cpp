@@ -1,54 +1,27 @@
 #include <bits/stdc++.h>
 
-
 using namespace std;
 
-ifstream fin("input.txt");
-ofstream fout("output.txt");
-ofstream ferr("error.txt");
-int N, q = 0, arr[2000];
-
-int GetN() {
-    fin >> N;
-    for (int i = 1; i <= N; i++) {
-        fin >> arr[i];
-    }
+int get_N() {
+    int N;
+    cin >> N;
     return N;
 }
 
-bool corr(int x) {
-    return 1 <= x && x <= N;
+int med3(int a, int b, int c) {
+    cout << "? " << a << ' ' << b << ' ' << c << endl;
+    int ans;
+    cin >> ans;
+    return ans;
 }
 
-int Med3(int a, int b, int c) {
-    if (++q > 10000) {
-        fout << "a lot of query's!\n";
-        exit(0);
-    }
-    if (corr(a) && corr(b) && corr(c)) {
-        vector<pair<int, int>> p = { {arr[a],a}, {arr[b],b}, {arr[c],c} };
-        sort(p.begin(), p.end());
-        return p[1].second;
-    }
-    fout << "is not in boarders!\n";
-    exit(0);
+int answer(int x) {
+    cout << "! " << x << endl;
 }
-
-int Answer(int x) {
-    if (arr[x] == N/2+1) {
-        fout << "accepted\n";
-    }
-    else {
-        fout << "wrong answer: " << x << endl;
-    }
-    //fout << q << endl;
-    exit(0);
-}
-
 
 void ternary_insert(list<int>& lst, int x) {
     if (lst.size() >= 2) {
-        int res = Med3(lst.front(), lst.back(), x);
+        int res = med3(lst.front(), lst.back(), x);
         if (lst.front() == res) {
             lst.push_front(x);
             return;
@@ -62,7 +35,7 @@ void ternary_insert(list<int>& lst, int x) {
         while (distance(L, R) > 1) {
             auto ind1 = next(L, distance(L, R)/3);
             auto ind2 = next(L, 2*distance(L, R)/3);
-            res = Med3(*ind1, *ind2, x);
+            res = med3(*ind1, *ind2, x);
             if (res == *ind1) {
                 R = ind1;
             }
@@ -96,5 +69,5 @@ int med_find(int N) {
 }
 
 int main() {
-    Answer(med_find(GetN()));
+    answer(med_find(get_N()));
 }
