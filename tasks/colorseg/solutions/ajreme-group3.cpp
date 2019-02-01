@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int N, arr[110];
+int N, arr[10010];
 long long ans = 0;
 
 int main() {
@@ -11,7 +11,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
     for (int i = 1; i <= N; i++) {
-        bool used[110] = {};
+        bool used[10010] = {};
         int temp = 0;
         for (int j = i; j <= N; j++) {
             if (!used[arr[j]]) {

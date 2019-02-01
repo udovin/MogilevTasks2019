@@ -2,26 +2,26 @@
 
 using namespace std;
 
-int n, arr[100000];
+int N, arr[10010];
 long long ans = 0;
 
-inline int solve(int a, int b) {
-    set<int> x;
-    for (int i = a; i <= b; i++) {
-        x.insert(arr[i]);
-    }
-    return x.size();
-}
-
 int main() {
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i++) {
+    scanf("%d", &N);
+    for (int i = 1; i <= N; i++) {
         scanf("%d", &arr[i]);
     }
-    for (int i = 1; i <= n; i++) {
-        for (int j = i; j <= n; j++) {
-            ans += solve(i, j);
+    for (int i = 1; i <= N; i++) {
+        for (int j = i; j <= N; j++) {
+            bool used[10010] = {};
+            int temp = 0;
+            for (int k = i; k <= j; k++) {
+                if (!used[arr[k]]) {
+                    used[arr[k]] = 1;
+                    temp++;
+                }
+            }
+            ans += temp;
         }
     }
-    print("%lld", ans);
+    printf("%lld\n", ans);
 }
