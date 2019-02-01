@@ -17,5 +17,5 @@ long long lcm(long long K) {
 int main() {
     long long N, K;
     cin >> N >> K;
-    cout << (K > 100 ? 0 : (N-1)/lcm(K) - (N-1)/lcm(K+1)) << endl;
+    cout << (N-1)/lcm(K) - (N-1)/lcm(K+1) << endl;
 }
