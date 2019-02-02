@@ -7,7 +7,8 @@ def add_test(file):
 
 def write_tests():
 	for i in range(len(tests)):
-		open(str(i+1) + '.in', 'w+').write(tests[i])
+		with open(str(i+1) + '.in', 'w') as fd:
+			fd.write(tests[i])
 
 ######################################################################
 

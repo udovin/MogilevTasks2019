@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 const int M = int(1e9) + 7;
@@ -25,6 +26,8 @@ int pow(int a, int b) {
 }
 
 int main() {
+	freopen("buildings.in", "rt", stdin);
+	freopen("buildings.out", "wt", stdout);
 	int n, m, c;
 	cin >> n >> m >> c;
 	int x = pow(c, n * n);
