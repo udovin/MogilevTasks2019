@@ -1,9 +1,9 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
-typedef long long ll;
 
-ll gcd(ll a, ll b) {
-	ll c;
+int64_t gcd(int64_t a, int64_t b) {
+	int64_t c;
 	while (a > 0) {
 		c = a;
 		a = b % a;
@@ -13,13 +13,15 @@ ll gcd(ll a, ll b) {
 }
 
 int main() {
-	ll n;
+	freopen("fractions.in", "rt", stdin);
+	freopen("fractions.out", "wt", stdout);
+	int64_t n;
 	cin >> n;
-	ll a = -1, b = -1;
-	for (ll i = 2; i * i <= n; i++) {
+	int64_t a = -1, b = -1;
+	for (int64_t i = 2; i * i <= n; i++) {
 		if (n % i != 0)
 			continue;
-		ll j = n / i;
+		int64_t j = n / i;
 		if (gcd(i, j) == 1) {
 			a = i, b = j;
 		}
@@ -29,10 +31,10 @@ int main() {
 		return 0;
 	}
 	cout << "YES" << endl << 2 << endl;
-	for (ll i = 0; i * b < n; i++) {
+	for (int64_t i = 0; i * b < n; i++) {
 		if ((n - 1 - i * b) % a != 0)
 			continue;
-		ll j = (n - 1 - i * b) / a;
+		int64_t j = (n - 1 - i * b) / a;
 		if (i >= a || j >= b)
 			continue;
 		cout << i << ' ' << a << endl;
