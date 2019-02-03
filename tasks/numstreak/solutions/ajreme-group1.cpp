@@ -14,6 +14,8 @@ int streak(int x) {
 }
 
 int main() {
+    freopen("numstreak.in", "rt", stdin);
+    freopen("numstreak.out", "wt", stdout);
     cin >> N >> K;
     for (int i = 2; i <= N; i++) {
         ans += (streak(i) == K);

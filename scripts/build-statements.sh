@@ -1,3 +1,8 @@
 #!/bin/sh
 
-docker run -v "$(realpath .)":/data blang/latex pdflatex contests/week1/day1/statements.tex
+build() {
+	docker run -v "$(realpath .)":/data blang/latex pdflatex \
+		--output-directory "$1" "$1/statements.tex"
+}
+
+build "contests/week1/day1"

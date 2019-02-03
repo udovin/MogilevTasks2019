@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
@@ -15,6 +16,8 @@ __int128 sqsum(__int128 x) {
 }
 
 int main() {
+    freopen("squaresum.in", "rt", stdin);
+    freopen("squaresum.out", "wt", stdout);
     uint64_t temp;
     cin >> temp;
     N = temp;

@@ -15,6 +15,8 @@ long long lcm(long long K) {
 }
 
 int main() {
+    freopen("numstreak.in", "rt", stdin);
+    freopen("numstreak.out", "wt", stdout);
     long long N, K;
     cin >> N >> K;
     cout << (N-1)/lcm(K) - (N-1)/lcm(K+1) << endl;
