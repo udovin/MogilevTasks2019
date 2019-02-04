@@ -56,10 +56,10 @@ def random_test(limitLN, limitRN, limitLK, limitRK):
 	if limitRN == limitRK and random.randint(1, 10) < 5:
 		N, K = max(limitRN, limitRK), max(limitRN, limitRK)
 	T = random.randint(1, 100)
-	if 0 <= T <= 69:
-		add_test(sqrt_dist(N, K))
-	elif 70 <= T <= 89:
+	if 0 <= T <= 49:
 		add_test(shuffle_sqrt_dist(N, K))
+	elif 50 <= T <= 79:
+		add_test(sqrt_dist(N, K))
 	else:
 		add_test(full_random(N, K))
 
