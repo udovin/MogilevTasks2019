@@ -1,0 +1,96 @@
+17 95
+link 17 3
+link 15 16
+link 9 16
+lca 1 1
+link 8 7
+link 11 9
+link 4 2
+link 10 11
+link 7 10
+link 2 6
+link 6 5
+cut 6
+lca 10 8
+lca 15 7
+link 6 10
+cut 7
+link 3 15
+lca 6 16
+cut 8
+lca 1 1
+cut 15
+lca 11 2
+lca 3 15
+link 12 4
+cut 11
+link 15 9
+lca 10 10
+lca 3 16
+link 16 1
+link 11 9
+lca 17 11
+cut 2
+link 14 17
+link 7 16
+cut 11
+cut 16
+link 2 7
+link 16 5
+lca 4 5
+cut 7
+link 7 13
+cut 12
+link 1 15
+cut 3
+link 13 14
+link 12 11
+lca 2 17
+cut 16
+cut 2
+link 11 13
+lca 11 11
+cut 4
+cut 13
+lca 9 16
+link 13 3
+lca 7 6
+cut 9
+link 2 9
+lca 5 5
+lca 15 9
+link 3 5
+link 9 13
+cut 1
+lca 7 7
+cut 11
+link 4 6
+link 11 7
+cut 12
+lca 9 9
+cut 9
+cut 2
+cut 3
+link 3 15
+link 9 8
+cut 11
+link 5 11
+lca 17 13
+link 8 11
+lca 6 14
+lca 10 9
+link 11 2
+cut 13
+link 2 12
+cut 17
+cut 11
+link 17 13
+link 13 5
+cut 15
+cut 13
+cut 8
+cut 14
+cut 5
+link 8 11
+link 12 14
+cut 12

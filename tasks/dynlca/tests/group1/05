@@ -1,0 +1,21 @@
+4 20
+lca 3 3
+link 2 4
+link 1 4
+link 4 3
+cut 1
+link 1 4
+cut 4
+link 3 1
+lca 3 3
+lca 4 3
+lca 3 1
+cut 3
+lca 2 2
+cut 1
+lca 2 2
+link 4 1
+lca 2 2
+lca 2 2
+cut 4
+cut 2
