@@ -85,6 +85,11 @@ int main() {
 		if (ansN < ansS)
 			ansS = ansN, ansI = i;
 	}
-	cout << ansI + 1 << endl << ansS << endl;
+	cout << ansI + 1 << endl;
+	for (int i = 0; i < n; i++) {
+		int ansN = (sup[i] + sdown[i]) * 2 - max(mup[i], mdown[i]);
+		cout << ansN << " ";
+	}
+	cout << endl;
 	return 0;
 }
