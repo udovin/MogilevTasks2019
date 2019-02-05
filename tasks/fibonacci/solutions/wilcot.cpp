@@ -34,7 +34,7 @@ int main() {
 		if (f[i][k] < n && !b) {
 			ans += fib[i];
 			if (ans > ANS) {
-				cout << "NIE" << endl;
+				cout << "No" << endl;
 				return 0;
 			}
 			n -= f[i][k];
@@ -45,7 +45,7 @@ int main() {
 		}
 	}
 	if (ans > ANS) {
-		cout << "NIE" << endl;
+		cout << "No" << endl;
 		return 0;
 	}
 	cout << ans << endl;
