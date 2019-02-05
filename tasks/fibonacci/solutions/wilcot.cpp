@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 const int K = 101;
@@ -10,6 +11,8 @@ int64_t f[K][K];
 int64_t fib[K];
 
 int main() {
+	freopen("fibonacci.in", "rt", stdin);
+	freopen("fibonacci.out", "wt", stdout);
 	for (int i = 0; i < K; i++)
 		f[0][i] = 1;
 	for (int i = 1; i < K; i++) {
@@ -34,7 +37,7 @@ int main() {
 		if (f[i][k] < n && !b) {
 			ans += fib[i];
 			if (ans > ANS) {
-				cout << "NIE" << endl;
+				cout << "No" << endl;
 				return 0;
 			}
 			n -= f[i][k];
@@ -45,7 +48,7 @@ int main() {
 		}
 	}
 	if (ans > ANS) {
-		cout << "NIE" << endl;
+		cout << "No" << endl;
 		return 0;
 	}
 	cout << ans << endl;

@@ -141,7 +141,9 @@ istream& operator>>(istream& is, RubiksCube& cube) {
 }
 
 int main(int argc, char* argv[]) {
-	registerValidation(argc, argv);
+	registerTestlibCmd(argc, argv);
+	int test = inf.readInt();
+	inf.readEoln();
 	stringstream ss;
 	for (int i = 0; i < 9; i++)
 		ss << inf.readLine() << endl;
@@ -174,6 +176,6 @@ int main(int argc, char* argv[]) {
 	}
 	int score = cube.getScore();
 	if (score == 48)
-		quitf(_ok, "Full solution");
+		quitp(static_cast<double>(10));
 	quitp(9 * static_cast<double>(score) / 48);
 }

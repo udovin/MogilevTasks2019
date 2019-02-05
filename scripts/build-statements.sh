@@ -7,3 +7,4 @@ build() {
 
 build "contests/week1/day1"
 build "contests/week1/day2"
+build "contests/week1/day3"
