@@ -181,7 +181,7 @@ vector <int> generateQ(int m, int n) {
 	for (int i = 0; i < m; i++) {
 		int z = rnd() % toadd.size();
 		
-		q.push_back(toadd[z]);
+		q.push_back(toadd[z] + 1);
 		swap(toadd[z], toadd[toadd.size() - 1]);
 		toadd.pop_back();
 	}
