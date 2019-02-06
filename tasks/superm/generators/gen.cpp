@@ -191,7 +191,7 @@ vector <int> generateQ(int m, int n) {
 int main() {
 	for (int i = 1; i <= 10; ++i) {
 		int n = rnd() % 7 + 13;
-		int m = rnd() % n;
+		int m = rnd() % n + 1;
 		generateTree(n);
 		vector <int> q(generateQ(m, n));
 		print(i, n, m, gr, q);
@@ -199,7 +199,7 @@ int main() {
 	}
 	for (int i = 11; i <= 30; ++i) {
 		int n = rnd() % 700 + 4300;
-		int m = rnd() % n;
+		int m = rnd() % n + 1;
 		generateTree(n);
 		vector <int> q(generateQ(m, n));
 		print(i, n, m, gr, q);
