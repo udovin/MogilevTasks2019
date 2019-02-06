@@ -105,8 +105,8 @@ vector < pair<string, char> > generate(int sz) {
 
 int main() {
 	for (int i = 1; i <= 15; ++i) {
-		int n = rnd() % 4 + 1;
-		int q = rnd() % 10 + 1;
+		int n = rnd() % 3 + 2;
+		int q = rnd() % 9 + 2;
 		vector < pair<string, char> > s(generate(q));
 		print(i, n, q, s);
 		cout << i << endl;
