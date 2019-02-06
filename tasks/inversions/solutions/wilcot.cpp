@@ -53,8 +53,8 @@ public:
 };
 
 int main() {
-	freopen("permutations.in", "rt", stdin);
-	freopen("permutations.out", "wt", stdout);
+	freopen("inversions.in", "rt", stdin);
+	freopen("inversions.out", "wt", stdout);
 	int n, m;
 	cin >> n >> m;
 	vector<int> a(n);
