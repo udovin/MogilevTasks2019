@@ -5,6 +5,9 @@
 
 using namespace std;
 
+int64_t ans = 0;
+vector <int64_t> f[2];
+
 int64_t solve(const string& s, int m) {
 	f[0].assign(m, 0);
 	f[1].assign(m, 0);
@@ -24,8 +27,8 @@ int64_t solve(const string& s, int m) {
 
 int main() {
 	string s; int m;
-	cin >> s; m = 4; //cf edition
-	//cin >> s >> m;
+	//	cin >> s; m = 4; //cf edition
+	cin >> s >> m;
 	cout << solve(s, m) << endl;
 	return 0;
 }
