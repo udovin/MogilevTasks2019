@@ -1,7 +1,3 @@
-#include <vector>
-#include <cinttypes>
-using namespace std;
-
 // Использование:
 // SegTree t(n);
 // t.update(i, x)

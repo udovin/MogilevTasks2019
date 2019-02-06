@@ -99,6 +99,8 @@ inline void solve() {
 }
 
 int main() {
+    freopen("nthcard.in", "rt", stdin);
+    freopen("nthcard.out", "wt", stdout);
     scanf("%d%d", &n, &k);
     for (int i = 1; i <= k; i++) {
         scanf("%d", &a[i]);
