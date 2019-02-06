@@ -10,8 +10,6 @@ struct SegTree {
 	int n;
 	vector<int64_t> t;
 
-	SegTree(int n) : n(n), t(n) {}
-
 	int64_t query(int v, int l, int r, int ql, int qr) {
 		if (ql >= qr) {
 			// Возвращаем нейтральный элемент
@@ -22,7 +20,7 @@ struct SegTree {
 			// ...
 			return 0;
 		}
-		if (ql == l && ql == r) {
+		if (ql == l && qr == r) {
 			// Запрос попал на отрезок целиком, возвращаем
 			// ответ для отрезка
 			return t[v];
@@ -50,6 +48,8 @@ struct SegTree {
 		// пересчитать ответ в текущей вершине
 		t[v] = t[v * 2 + 1] + t[v * 2 + 2];
 	}
+
+	SegTree(int n) : n(n), t(4 * n) {}
 
 	int64_t query(int l, int r) {
 		return query(0, 0, n, l, r);
