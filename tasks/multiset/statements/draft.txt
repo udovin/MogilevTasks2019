@@ -1,7 +1,0 @@
-ОГРАНИЧЕНИЯ:
-1) Q ≤ 1000		(20 баллов)
-2) Q ≤ 5000		(60 баллов)
-3) Q ≤ 10^5		(100 баллов)
-
-
-ORIGINAL: https://codeforces.com/problemset/problem/706/D
