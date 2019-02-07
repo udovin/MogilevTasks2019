@@ -51,7 +51,7 @@ struct SegTree {
 		push(v, l, r);
 		update(v * 2 + 1, l, m, ql, min(qr, m), x);
 		update(v * 2 + 2, m, r, max(m, ql), qr, x);
-		t[v] = get(v * 2 + 1, l, m) + get(v * 2 + 2, l, m);
+		t[v] = get(v * 2 + 1, l, m) + get(v * 2 + 2, m, r);
 	}
 
 	SegTree(int n) : n(n), t(4 * n), p(4 * n) {}
