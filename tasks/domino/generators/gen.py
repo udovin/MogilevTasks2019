@@ -12,10 +12,18 @@ def write_tests():
 
 ######################################################################
 
+def get_next_random_pos(st, )
+
 def full_random(N, len=10**8):
 	file = str(N) + '\n'
+	st = set()
 	for i in range(N):
-		file += str(random.randint(-len, len)) + ' ' + str(random.randint(2, len//100)) + '\n'
+		X = random.randint(-len, len)
+		while X in st:
+			X = random.randint(-len, len)
+		Y = random.randint(2, len//100)
+		file += str(X) + ' ' + str(Y) + '\n'
+		st.add(X)
 	return file
 
 def step_random(N, len=10**8):

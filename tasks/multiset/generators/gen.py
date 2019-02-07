@@ -49,10 +49,8 @@ def full_random(q):
 	return file
 
 def random_test(q):
-	print('generate...')
 	T = random.randint(1, 10)
 	if 0 <= T <= 3:
-		print('full random')
 		return full_random(q)
 	elif 4 <= T <= 6:
 		return insert_than_query(q, random.randint(1, q - 1))
