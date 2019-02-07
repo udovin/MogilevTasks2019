@@ -100,6 +100,7 @@ int main(int argc, char **argv) {
 			quitf(_wa, "Wrong answer in cycle for 2");
 		}
 	}
+	
 	quitf(_ok, "ok");
 }
 

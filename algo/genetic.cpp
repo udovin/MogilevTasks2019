@@ -11,22 +11,28 @@ int n, m;
 
 mt19937_64 rnd(time(NULL));
 
+//const double MIN_T = 1e-5;
+//const double MAX_T = 1000;
+
 const int MAX_NUMBER_OF_MUTATIONS = 10;
+const int MAX_NUMBER_OF_MUTATIONS = 10;
+
 const int INF = 1000000000;
 
-vector<vector<int> > cur_ans, best_ans;
+vector<vector<int>> best_ans;
+vector<vector<vector<int>>> cur_ans;
 int best_cost;
 
-void mutation(vector<vector<int> >& a) {
+void mutation(vector<vector<int>>& a) {
 	int cnt = rnd() % MAX_NUMBER_OF_MUTATIONS + 1;
 	for (; cnt; --cnt) {
 		int x = rnd() % n;
 		int y = rnd() % m;
-		a[x][y] = rnd() % 2;
+		a[x][y] = !a[x][y];
 	}
 }
 
-int getCost(vector<vector<int> > cur) {
+int getCost(const vector<vector<int>>& cur) {
 	int x = 0;
 	int ans = 0;
 	for(int i = 0; i < n; ++i) {
@@ -50,10 +56,11 @@ int getCost(vector<vector<int> > cur) {
 	return ans;
 }
 
-bool isTransition(const double& dE) {
+bool isTransition(double dE) {
 	if (dE < 0) {
 		return true;
 	}
+	
 	return false;
 }
 
@@ -80,7 +87,7 @@ void init(vector<vector<int> >& cur) {
 }
 
 int main() {
-	ifstream file_in("input10.txt");
+	ifstream file_in("input9.txt");
 	file_in >> n >> m;
 	//cin >> n >> m;
 	a.resize(n);
@@ -94,31 +101,31 @@ int main() {
 	file_in.close();
 
 	init(cur_ans);
-
 	int i = 1;
 	while((best_cost != 0)) {
 		mutation(cur_ans);
 		int cur_cost = getCost(cur_ans);
-		if(isTransition(cur_cost-best_cost)) {
+		if(isTransition(cur_cost - best_cost)) {
 			best_cost = min(best_cost, cur_cost);
-			if (best_cost==cur_cost) {
+			if (best_cost == cur_cost) {
 				best_ans = cur_ans;
-				//print("temp.txt");
+				print("temp.txt");
 			}
 		} else {
 			cur_ans = best_ans;
 		}
-		//T = MAX_T * 0.1 / i;
-		++i;
+		/*T = MAX_T * 0.1 / i;*/ ++i;
+		//T *= 0.99997;
 		
 		if (i % 100 == 0) {
-			cout << i << " - " << best_cost <<endl;
+			cout << i << " : " /*<< T << " - "*/ << best_cost <<endl;
 		}
+		
 		
 	}
 	cout << best_cost << endl;
 	
-    print("output10.txt");
+    print("output9.txt");
     /*
     for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j) {
@@ -129,4 +136,3 @@ int main() {
 	*/
 	return 0;
 }
-
