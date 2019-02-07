@@ -1,5 +1,10 @@
 import math
 import random
+from subprocess import run
+from shutil import copyfile, move
+from os import remove
+from os.path import exists
+
 
 tests = []
 def add_test(file):
@@ -7,8 +12,14 @@ def add_test(file):
 
 def write_tests():
 	for i in range(len(tests)):
-		with open(str(i+1) + '.in', 'w+') as fd:
+		input_file = '{:02}'.format(i+1)
+		output_file = '{:02}.a'.format(i+1)
+		with open(input_file, 'w') as fd:
 			fd.write(tests[i])
+		copyfile(input_file, 'multiset.in')
+		run(['./a.out'])
+		remove('multiset.in')
+		move('multiset.out', output_file)
 
 ######################################################################
 
@@ -24,11 +35,13 @@ def insert_delete_1query(q):
 	file, cur = str(q) + '\n', []
 	for i in range(q - 1):
 		if len(cur) != 0 and random.random() < 0.4:
-			X = random.choice(cur_set)
+			X = random.choice(cur)
 			cur.remove(X)
 			file += '- ' + str(X) + '\n'
 		else:
-			file += '+ ' + str(random.randint(1, 10**9)) + '\n'
+			X = random.randint(1, 10**9)
+			cur += [X]
+			file += '+ ' + str(X) + '\n'
 	file += '? ' + str(random.randint(1, 10**9)) + '\n'
 	return file
 
@@ -42,7 +55,7 @@ def full_random(q):
 		elif random.random() < 0.8:
 			X = random.randint(1, 10**9)
 			cur += [X]
-			file += '+ ' + str(random.randint(1, 10**9)) + '\n'
+			file += '+ ' + str(X) + '\n'
 		else:
 			file += '? ' + str(random.randint(1, 10**9)) + '\n'
 	file += '? ' + str(random.randint(1, 10**9)) + '\n'
