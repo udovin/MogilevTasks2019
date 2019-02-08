@@ -21,6 +21,7 @@ int readOutput(InStream& in, int n, const Edges& g) {
 
 int main(int argc, char* argv[]) {
 	registerTestlibCmd(argc, argv);
+	int t = inf.readInt();
 	int n = inf.readInt();
 	int m = inf.readInt();
 	vector<pair<int, int>> g;

@@ -16,20 +16,22 @@ def generate(filename, n, m):
 				edges.add((x, y))
 				edges.add((y, x))
 				fd.write("{} {}\n".format(x, y))
+	with open("{}.a".format(filename), "w") as fd:
+		fd.write("{}\n".format(n))
+		fd.write("{}\n".format(" ".join(str(i + 1) for i in range(n))))
 
 def main():
 	seed("graphcoloring-seed")
-	generate("tests/public/input1.txt", 10, 15)
-	generate("tests/public/input2.txt", 10, 25)
-	generate("tests/public/input3.txt", 100, 500)
-	generate("tests/public/input4.txt", 100, 2641)
-	generate("tests/public/input5.txt", 250, 5780)
-	generate("tests/public/input6.txt", 500, 1000)
-	generate("tests/public/input7.txt", 500, 50000)
-	generate("tests/public/input8.txt", 500, 112345)
-	generate("tests/public/input9.txt", 500, 912)
-	generate("tests/public/input10.txt", 500, 124749)
-	generate("tests/samples/01", 6, 5)
+	generate("tests/tests/01", 10, 15)
+	generate("tests/tests/02", 10, 25)
+	generate("tests/tests/03", 100, 500)
+	generate("tests/tests/04", 100, 2641)
+	generate("tests/tests/05", 250, 5780)
+	generate("tests/tests/06", 500, 1000)
+	generate("tests/tests/07", 500, 50000)
+	generate("tests/tests/08", 500, 112345)
+	generate("tests/tests/09", 500, 912)
+	generate("tests/tests/10", 500, 124749)
 
 
 if __name__ == "__main__":

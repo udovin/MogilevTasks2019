@@ -10,21 +10,22 @@ def generate(filename, n, a, b):
 		fd.write("{}\n".format(" ".join(str(randint(1, a)) for _ in range(n))))
 		for i in range(n):
 			fd.write("{}\n".format(" ".join(str(randint(1, b)) for _ in range(n))))
+	with open("{}.a".format(filename), "w") as fd:
+		fd.write("{}\n".format(" ".join(str(i + 1) for i in range(n))))
 
 
 def main():
 	seed("salesman-seed")
-	generate("tests/public/input1.txt", 10, 10, 10)
-	generate("tests/public/input2.txt", 20, 1000, 10)
-	generate("tests/public/input3.txt", 30, 10, 1000)
-	generate("tests/public/input4.txt", 100, 1000, 1000)
-	generate("tests/public/input5.txt", 250, 1000, 1000)
-	generate("tests/public/input6.txt", 500, 16, 16)
-	generate("tests/public/input7.txt", 500, 100000, 10)
-	generate("tests/public/input8.txt", 500, 100000, 100000)
-	generate("tests/public/input9.txt", 500, 2, 5)
-	generate("tests/public/input10.txt", 500, 128, 100000)
-	generate("tests/samples/01", 6, 5, 5)
+	generate("tests/tests/01", 10, 10, 10)
+	generate("tests/tests/02", 20, 1000, 10)
+	generate("tests/tests/03", 30, 10, 1000)
+	generate("tests/tests/04", 100, 1000, 1000)
+	generate("tests/tests/05", 250, 1000, 1000)
+	generate("tests/tests/06", 500, 16, 16)
+	generate("tests/tests/07", 500, 100000, 10)
+	generate("tests/tests/08", 500, 100000, 100000)
+	generate("tests/tests/09", 500, 2, 5)
+	generate("tests/tests/10", 500, 128, 100000)
 
 
 if __name__ == "__main__":
