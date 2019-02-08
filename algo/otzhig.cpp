@@ -17,12 +17,10 @@ const double MAX_T = 1000;
 const int MAX_NUMBER_OF_MUTATIONS = 10;
 const int INF = 1000000000;
 
-vector<vector<int> > cur_ans, best_ans;
+vector<vector<int>> cur_ans, best_ans;
 int best_cost;
 
-int r=10,k=100;
-
-void mutation(vector<vector<int> >& a) {
+void mutation(vector<vector<int>>& a) {
 	int cnt = rnd() % MAX_NUMBER_OF_MUTATIONS + 1;
 	for (; cnt; --cnt) {
 		int x = rnd() % n;
@@ -31,7 +29,7 @@ void mutation(vector<vector<int> >& a) {
 	}
 }
 
-int getCost(vector<vector<int> > cur) {
+int getCost(const vector<vector<int>>& cur) {
 	int x = 0;
 	int ans = 0;
 	for(int i = 0; i < n; ++i) {
@@ -55,11 +53,11 @@ int getCost(vector<vector<int> > cur) {
 	return ans;
 }
 
-double getProbability(const double& dE, const double& t) {
+double getProbability(double dE, double t) {
 	return exp(-dE / t);
 }
 
-bool isTransition(const double& dE, const double& t) {
+bool isTransition(double dE, double t) {
 	if (dE < 0) {
 		return true;
 	}
@@ -94,7 +92,7 @@ void init(vector<vector<int> >& cur) {
 }
 
 int main() {
-	ifstream file_in("input10.txt");
+	ifstream file_in("input9.txt");
 	file_in >> n >> m;
 	//cin >> n >> m;
 	a.resize(n);
@@ -113,25 +111,27 @@ int main() {
 	while((T > MIN_T) && (best_cost != 0)) {
 		mutation(cur_ans);
 		int cur_cost = getCost(cur_ans);
-		if(isTransition(cur_cost-best_cost,T)) {
+		if(isTransition(cur_cost - best_cost, T)) {
 			best_cost = min(best_cost, cur_cost);
-			if (best_cost==cur_cost) {
+			if (best_cost == cur_cost) {
 				best_ans = cur_ans;
-				//print("temp.txt");
+				print("temp.txt");
 			}
 		} else {
 			cur_ans = best_ans;
 		}
 		T = MAX_T * 0.1 / i; ++i;
+		//T *= 0.99997;
 		
 		if (i % 100 == 0) {
 			cout << i << " : " << T << " - " << best_cost <<endl;
 		}
 		
+		
 	}
 	cout << best_cost << endl;
 	
-    print("output10.txt");
+    print("output9.txt");
     /*
     for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j) {
