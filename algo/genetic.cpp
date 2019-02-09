@@ -11,16 +11,11 @@ int n, m;
 
 mt19937_64 rnd(time(NULL));
 
-//const double MIN_T = 1e-5;
-//const double MAX_T = 1000;
-
 const int MAX_NUMBER_OF_MUTATIONS = 10;
-const int MAX_NUMBER_OF_MUTATIONS = 10;
-
 const int INF = 1000000000;
 
-vector<vector<int>> best_ans;
-vector<vector<vector<int>>> cur_ans;
+vector<vector<int>> best_ans, cur_ans;
+vector<vector<int>> cur;
 int best_cost;
 
 void mutation(vector<vector<int>>& a) {
@@ -114,8 +109,7 @@ int main() {
 		} else {
 			cur_ans = best_ans;
 		}
-		/*T = MAX_T * 0.1 / i;*/ ++i;
-		//T *= 0.99997;
+		++i;
 		
 		if (i % 100 == 0) {
 			cout << i << " : " /*<< T << " - "*/ << best_cost <<endl;
