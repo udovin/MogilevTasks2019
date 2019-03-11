@@ -1,0 +1,11 @@
+{
+    "problem": {
+        "name": "Вопросики",
+        "input": "input.txt",
+        "output": "output.txt",
+        "timeLimit": 1.0,
+        "memoryLimit": 128,
+        "scoreType": "byTest",
+        "cost": 2
+    }
+}

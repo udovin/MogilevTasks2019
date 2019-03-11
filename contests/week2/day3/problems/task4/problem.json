@@ -1,0 +1,16 @@
+{
+    "problem": {
+        "name": "Допросики",
+        "input": "input.txt",
+        "output": "output.txt",
+        "timeLimit": 4.0,
+        "memoryLimit": 128,
+        "scoreType": "subtask",
+        "subtasks": [
+            [10, 8],
+            [10, 10],
+            [40, 13],
+            [40, 26]
+        ]
+    }
+}

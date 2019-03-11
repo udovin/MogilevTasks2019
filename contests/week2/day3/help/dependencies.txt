@@ -1,0 +1,14 @@
+Dependencies required to build the problem:
+    * Bash
+    * GNU Coreutils
+    * GNU Make
+    * GNU C
+    * GNU C++
+    * Free Pascal Compiler
+    * GNU M4
+    * latexmk
+    * jq
+    * dos2unix
+    * sed
+    * Python 3.x (for tools/testerize.py)
+    * SSH (to use `make deploy` with a patched CMS)

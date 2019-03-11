@@ -1,0 +1,94 @@
+#!/bin/bash
+
+function runPretestGen {
+
+tcat <<<"\
+4
+1 4 2 3
+4
+0 1 2 3"
+
+tcat <<<"\
+3
+5 5 5
+3
+0 1 2"
+
+tcat <<<"\
+6
+2 7 5 4 8 10
+3
+3 5 2"
+
+}
+
+
+function runTestGen {
+
+tcat <<<"\
+4
+1 4 2 3
+4
+0 1 2 3"
+
+tcat <<<"\
+3
+5 5 5
+3
+0 1 2"
+
+tcat <<<"\
+6
+2 7 5 4 8 10
+3
+3 5 2"
+
+tgen ../gen 1 1 0 2 10 gokTCoD
+tgen ../gen 2 1 0 3 10 HhUEIIrJ
+tgen ../gen 3 1 0 4 10 OsnAcGX
+tgen ../gen 3 1 0 7 10 JGmKEsw
+tgen ../gen 3 1 0 9 10 xyChxq
+tgen ../gen 100 1 0 1750 1786 lmrTaTG
+tgen ../gen 99 1 0 479 519 diZUp
+tgen ../gen 98 1 0 1507 1551 QpwoumQ
+tgen ../gen 97 1 0 1646 1694 VwvTTzB
+tgen ../gen 96 1 0 1803 1855 VBXBgINK
+tgen ../gen 95 1 0 642 698 lVKtF
+tgen ../gen 94 1 0 571 631 StMUp
+tgen ../gen 93 1 0 1365 1429 ceoJo
+tgen ../gen 92 1 0 80 148 mBVhq
+tgen ../gen 91 1 0 1169 1241 IqdQRtsW
+tgen ../gen 100000 2 1 22415 31915 KpRNKZyo
+tgen ../gen 99999 2 1 138954 148954 FqUUdGN
+tgen ../gen 99998 2 1 69673 80173 wWelru
+tgen ../gen 99997 2 1 39985 50985 DlQIZmLg
+tgen ../gen 99996 2 1 1152 12652 uVDYaI
+tgen ../gen 99995 2 1 162953 174953 jwXPCZWxb
+tgen ../gen 99994 2 1 98147 110647 jdHCSqlU
+tgen ../gen 99993 2 1 53381 66381 VfTzFPkt
+tgen ../gen 99992 2 1 160359 173859 cmCkKCr
+tgen ../gen 99991 2 1 49966 63966 pXmgf
+tgen ../gen 99990 2 1 101021 115521 LXaoDGZaA
+tgen ../gen 99989 2 1 67491 82491 IMlpIvfw
+tgen ../gen 100000 100000 100000 863402 878902 KBeXNLTa
+tgen ../gen 100000 100000 100000 892105 908105 ykqjnvcGw
+tgen ../gen 100000 100000 100000 815848 832348 QpixzQMWq
+tgen ../gen 100000 100000 100000 792361 809361 DdjxulA
+tgen ../gen 100000 100000 100000 759702 777202 AANDsIVSH
+tgen ../gen 100000 100000 100000 712759 730759 agLXoh
+tgen ../gen 100000 100000 100000 860080 878580 vhdFvpGPI
+tgen ../gen 100000 100000 100000 861735 880735 hAUQooI
+tgen ../gen 100000 100000 100000 779300 798800 ZsfXJi
+tgen ../gen 100000 100000 100000 889322 909322 EQfeb
+tgen ../gen 1000000 1000000 1000000 857000 872500 jUOCsXGWK
+tgen ../gen 1000000 1000000 1000000 782844 798844 vyWLVIwE
+tgen ../gen 1000000 1000000 1000000 762772 779272 qMbsnB
+tgen ../gen 1000000 1000000 1000000 817872 834872 SIpVNxX
+tgen ../gen 1000000 1000000 1000000 823630 841130 SLeobJS
+tgen ../gen 1000000 1000000 1000000 804436 822436 zDceMMdCI
+tgen ../gen 1000000 1000000 1000000 720836 739336 bStUdjKH
+tgen ../gen 1000000 1000000 1000000 899064 918064 faMQFkHSP
+tgen ../gen 1000000 1000000 1000000 858733 878233 ZXAWZM
+tgen ../gen 1000000 1000000 1000000 757750 777750 HxCNKprc
+
+}
