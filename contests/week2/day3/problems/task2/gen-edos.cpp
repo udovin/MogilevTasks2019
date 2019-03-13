@@ -1,13 +1,15 @@
 #include "testlib.h"
+#include "parmpars.hpp"
 using namespace std;
 
 int main(int argc, char* argv[])
 {
+    initGenerator(argc, argv, 1);
     //freopen("text.c", "r", stdin);
     ios_base::sync_with_stdio(false);
-    registerGen(argc, argv, 1);
 
-    int n = rnd.next(200000, 500000);
+    DECLARE_GEN(GenRange<int>, n);
+
     cout << n << '\n';
     for(int i = 0; i < n; i++)
     {

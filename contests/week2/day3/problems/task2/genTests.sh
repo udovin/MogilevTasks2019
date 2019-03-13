@@ -54,25 +54,23 @@ tgen ../gen n=500000 clone_gc=0.0 ruZones=1 rollback_c=0.5 undo_c=0.5
 
 # Subtask 5 (10 tests): no undo
 tgen ../gen n='[49000;50000]' undo_c=0 
-tgen ../gen n='[299000;300000]' undo_c=0 ruZones=1
-tgen ../gen n=500000 undo_c=0 clone_gc=0.5
+tgen ../gen-edos n='[299000;300000]'
+tgen ../gen-edos n=500000
 tgen ../gen n=500000 undo_c=0 rollback_c=0.001 ruZones=4
 tgen ../gen n='[499000;500000]' undo_c=0 clone_gc=0.4 rollback_c=0.2
 
 tmany 5 ../gen n='[499000;500000]' undo_c=0
 
 # Subtask 6 (15 tests): n <= 500000
-tgen ../gen n='[80000;160000]'
 tgen ../gen n=500000
 tgen ../gen n='[495000;500000]' ruZones=1
 tgen ../gen n='[495000;500000]' ruZones=1 clone_gc=0.6 check_gc=0.1
 tgen ../gen n='[495000;500000]' ruZones=1 ruLens=200000 info_c=100
-
 tgen ../gen n='[495000;500000]' ruZones=1 rollback_z=0 undo_c=0 undo_z=1
-tgen ../gen n='[495000;500000]' ruZones=1 rollback_c=1 rollback_z=0.1 undo_c=0.1 undo_z=1 clone_gc=0.5
-tmany 3 ../gen n='[495000;500000]' ruZones=2 rollback_c=1 rollback_z=0.2 undo_c=0.2 undo_z=1 clone_gc=0.2
 
-tmany 3 ../gen n='[495000;500000]' ruZones=10 rollback_c=1 rollback_z=0.1 undo_c=0.1 undo_z=0.5 clone_gc=0.3
-tmany 2 ../gen n='[495000;500000]' ruZones=2
+tgen ../gen n='[495000;500000]' ruZones=1 rollback_c=1 rollback_z=0.1 undo_c=0.1 undo_z=1 clone_gc=0.5
+tgen ../gen n='[495000;500000]' ruZones=2 rollback_c=1 rollback_z=0.2 undo_c=0.2 undo_z=1 clone_gc=0.2
+tgen ../gen n='[495000;500000]' ruZones=10 rollback_c=1 rollback_z=0.1 undo_c=0.1 undo_z=0.5 clone_gc=0.3
+tmany 7 ../gen-edos n='[480000;500000]'
 
 }
