@@ -16,13 +16,13 @@ int main(int argc, char* argv[])
         switch(i % 3)
         {
         case 0:
-            cout << "clone " << i / 3 + 1 << '\n';
-            break;
-        case 1:
             cout << "info " << i / 3 + 1 << " " << i / 3 + 1 << '\n';
             break;
-        case 2:
+        case 1:
             cout << "check " << i / 3 + 1 << '\n';
+            break;
+        case 2:
+            cout << "clone " << i / 3 + 1 << '\n';
             break;
         }
     }
