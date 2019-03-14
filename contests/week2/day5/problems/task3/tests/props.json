@@ -1,0 +1,273 @@
+{
+  "InputFile": "input.txt",
+  "OutputFile": "output.txt",
+  "TimeLimit": 2000,
+  "MemoryLimit": 262144,
+  "StopAfterFirstFail": false,
+  "Checker": {
+    "Type": "TTextChecker",
+    "Value": {
+      "CheckerFileName": "checker.exe",
+      "ParamsPolicy": "secpInOutAns"
+    }
+  },
+  "Version": {
+    "Build": 129,
+    "Major": 1,
+    "Minor": 2,
+    "Release": 3,
+    "Tag": ""
+  },
+  "TestList": [
+    {
+      "Cost": 2.0,
+      "InputFile": "1.in",
+      "OutputFile": "1.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "2.in",
+      "OutputFile": "2.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "3.in",
+      "OutputFile": "3.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "4.in",
+      "OutputFile": "4.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "5.in",
+      "OutputFile": "5.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "6.in",
+      "OutputFile": "6.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "7.in",
+      "OutputFile": "7.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "8.in",
+      "OutputFile": "8.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "9.in",
+      "OutputFile": "9.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "10.in",
+      "OutputFile": "10.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "11.in",
+      "OutputFile": "11.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "12.in",
+      "OutputFile": "12.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "13.in",
+      "OutputFile": "13.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "14.in",
+      "OutputFile": "14.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "15.in",
+      "OutputFile": "15.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "16.in",
+      "OutputFile": "16.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "17.in",
+      "OutputFile": "17.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "18.in",
+      "OutputFile": "18.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "19.in",
+      "OutputFile": "19.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "20.in",
+      "OutputFile": "20.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "21.in",
+      "OutputFile": "21.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "22.in",
+      "OutputFile": "22.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "23.in",
+      "OutputFile": "23.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "24.in",
+      "OutputFile": "24.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "25.in",
+      "OutputFile": "25.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "26.in",
+      "OutputFile": "26.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "27.in",
+      "OutputFile": "27.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "28.in",
+      "OutputFile": "28.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "29.in",
+      "OutputFile": "29.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "30.in",
+      "OutputFile": "30.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "31.in",
+      "OutputFile": "31.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "32.in",
+      "OutputFile": "32.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "33.in",
+      "OutputFile": "33.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "34.in",
+      "OutputFile": "34.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "35.in",
+      "OutputFile": "35.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "36.in",
+      "OutputFile": "36.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "37.in",
+      "OutputFile": "37.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "38.in",
+      "OutputFile": "38.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "39.in",
+      "OutputFile": "39.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "40.in",
+      "OutputFile": "40.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "41.in",
+      "OutputFile": "41.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "42.in",
+      "OutputFile": "42.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "43.in",
+      "OutputFile": "43.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "44.in",
+      "OutputFile": "44.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "45.in",
+      "OutputFile": "45.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "46.in",
+      "OutputFile": "46.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "47.in",
+      "OutputFile": "47.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "48.in",
+      "OutputFile": "48.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "49.in",
+      "OutputFile": "49.out"
+    },
+    {
+      "Cost": 2.0,
+      "InputFile": "50.in",
+      "OutputFile": "50.out"
+    }
+  ]
+}

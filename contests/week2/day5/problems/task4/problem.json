@@ -1,0 +1,18 @@
+{
+    "problem": {
+        "name": "Demo problem",
+        "input": "input.txt",
+        "output": "output.txt",
+        "timeLimit": 4,
+        "memoryLimit": 256,
+        "scoreType": "subtask",
+        "subtasks": [
+            [5, 6],
+            [20, 6],
+            [15, 2],
+            [10, 9],
+            [15, 3],
+            [35, 24]
+        ]
+    }
+}

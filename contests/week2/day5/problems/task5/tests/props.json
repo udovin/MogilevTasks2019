@@ -1,0 +1,73 @@
+{
+  "InputFile": "stdin",
+  "OutputFile": "stdout",
+  "TimeLimit": 30000,
+  "MemoryLimit": 1048576,
+  "StopAfterFirstFail": false,
+  "Checker": {
+    "Type": "TTextChecker",
+    "Value": {
+      "CheckerFileName": "checker.exe",
+      "ParamsPolicy": "secpInOutAns"
+    }
+  },
+  "Version": {
+    "Build": 129,
+    "Major": 1,
+    "Minor": 2,
+    "Release": 3,
+    "Tag": ""
+  },
+  "TestList": [
+    {
+      "Cost": 10.0,
+      "InputFile": "1.in",
+      "OutputFile": "1.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "2.in",
+      "OutputFile": "2.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "3.in",
+      "OutputFile": "3.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "4.in",
+      "OutputFile": "4.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "5.in",
+      "OutputFile": "5.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "6.in",
+      "OutputFile": "6.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "7.in",
+      "OutputFile": "7.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "8.in",
+      "OutputFile": "8.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "9.in",
+      "OutputFile": "9.out"
+    },
+    {
+      "Cost": 10.0,
+      "InputFile": "10.in",
+      "OutputFile": "10.out"
+    }
+  ]
+}

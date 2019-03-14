@@ -1,0 +1,15 @@
+{
+    "contest": {
+        "name": "Сборы к республиканской олимпиаде. Неделя 2, день 5. Gepardo Kontest.",
+        "description": "Сборы к республиканской олимпиаде. Неделя 2, день 5. Gepardo Kontest.",
+        "date": "15 марта 2019 г.",
+        "location": "Могилёв, Беларусь",
+        "tokenCount": -1,
+        "submissionCount": 100,
+        "time": {
+            "start": "2018-06-12 09:00",
+            "length": 180
+        },
+        "mode": "running"
+    }
+}

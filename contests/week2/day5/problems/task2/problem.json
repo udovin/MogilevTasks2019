@@ -1,0 +1,11 @@
+{
+    "problem": {
+        "name": "Demo problem",
+        "input": "input.txt",
+        "output": "output.txt",
+        "timeLimit": 2,
+        "memoryLimit": 256,
+        "scoreType": "byTest",
+        "cost": 2
+    }
+}
