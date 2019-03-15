@@ -1,79 +1,99 @@
 # -*- coding: utf-8 -*-
 
-from requests import get
+from requests import get, post
 from json import dumps
-from os import environ
 
 
-CONFIG = dict(
-	host_url="http://localhost:4242",
-	login=environ.get("USER"),
-)
+class Client(object):
+	HOST_URL = "http://localhost:4242"
 
+	def __init__(self, login, password):
+		self.login = login
+		self.password = password
 
-class Contest(object):
-	def __init__(self):
-		pass
+	def get_contest(self):
+		return Contest(self)
 
-	def get_tasks(self):
-		result = get(
-			"{}/tasks".format(CONFIG["host_url"]),
-		).json()
-		if not result["good"]:
-			raise RuntimeError(result["error"])
-		for task in result["data"]:
-			print(task)
-
-	def get_task(self, name):
-		result = get(
-			"{}/task/{}".format(CONFIG["host_url"], name)
-		).json()
-		if not result["good"]:
-			raise RuntimeError(result["error"])
-		return Task(
-			name=result["data"]["name"],
-			text=result["data"]["text"],
+	def get_cookies(self):
+		return dict(
+			login=self.login,
+			password=self.password,
 		)
 
 
-class Task(object):
-	def __init__(self, name, statement):
-		self.name = name
-		self.statement = statement
+class Contest(object):
+	def __init__(self, client):
+		self.client = client
 
-	def get_statement(self):
+	def show_standings(self):
+		pass
+
+	def show_tasks(self):
+		result = get(
+			"{}/tasks".format(self.client.HOST_URL),
+			cookies=self.client.get_cookies(),
+		).json()
+		if not result["good"]:
+			raise RuntimeError(result["error"])
+		for task, accepted in result["data"]:
+			print(task, end='')
+			print(" \U0001F389" if accepted else "")
+
+	def get_task(self, name):
+		result = get(
+			"{}/task/{}".format(self.client.HOST_URL, name),
+			cookies=self.client.get_cookies(),
+		).json()
+		if not result["good"]:
+			raise RuntimeError(result["error"])
+		return Task(self.client, name, result["data"])
+
+
+class Task(object):
+	def __init__(self, client, name, legend):
+		self.client = client
+		self.name = name
+		self.legend = legend
+
+	def show_legend(self):
 		print(self.name)
 		print("-" * 10)
-		print(self.statement)
+		print(self.legend)
+		print("-" * 10)
 
 	def solve(self, answer):
 		if callable(answer):
 			answer = self._run_solution(answer)
+		else:
+			answer = [answer]
 		accepted, message = self._send_answer(answer)
-		print("Accepted" if accepted else "Rejected")
+		print("\U0001F389 Accepted" if accepted else "\u274C Rejected")
 		if message:
+			print("-" * 10)
 			print(message)
+			print("-" * 10)
 
 	def _run_solution(self, func):
-		outputs = []
+		answer = []
 		for args, kwargs in self._get_inputs():
-			output.append(func(*args, **kwargs))
-		return outputs
-
-	def _send_answer(self, answer):
-		result = post(
-			"{}/send/{}".format(CONFIG["host_url"], self.name),
-			data=dict(answer=dumps(answer)),
-		).json()
-		if not result["good"]:
-			raise RuntimeError(result["error"])
-		return result["data"]["accepted"], result["data"]["message"]
+			answer.append(func(*args, **kwargs))
+		return answer
 
 	def _get_inputs(self):
 		result = get(
-			"{}/inputs/{}".format(CONFIG["host_url"], self.name),
+			"{}/task/{}/inputs".format(self.client.HOST_URL, self.name),
+			cookies=self.client.get_cookies(),
 		).json()
 		if not result["good"]:
 			raise RuntimeError(result["error"])
-		for item in result["data"]:
-			yield item["args"], item["kwargs"]
+		return result["data"]
+
+	def _send_answer(self, answer):
+		result = post(
+			"{}/task/{}/submit".format(self.client.HOST_URL, self.name),
+			data=dumps(answer),
+			cookies=self.client.get_cookies(),
+		).json()
+		if not result["good"]:
+			raise RuntimeError(result["error"])
+		return result["data"]
