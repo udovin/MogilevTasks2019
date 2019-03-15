@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
     int pans = readAns(ouf);
     int jans = readAns(ans);
     
-    quitp(10.0 * cube(1.0 * jans / (n * m)), "found = %d, possible best = %d", pans, n*m);
+    quitp(10.0 * cube(1.0 * pans / (n * m)), "found = %d, possible best = %d", pans, n*m);
     
     return 0;
 }
