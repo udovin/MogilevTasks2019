@@ -68,6 +68,13 @@ class Users(Storage):
 			submits={},
 		)])
 
+	def get_all_users(self):
+		def _select(rows):
+			for row in rows:
+				yield row
+
+		return self.select(_select)
+
 	def get_user(self, login):
 		def _select(rows):
 			for row in rows:

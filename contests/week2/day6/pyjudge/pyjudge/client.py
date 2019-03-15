@@ -2,6 +2,7 @@
 
 from requests import get, post
 from json import dumps
+from tabulate import tabulate
 
 
 class Client(object):
@@ -26,7 +27,41 @@ class Contest(object):
 		self.client = client
 
 	def show_standings(self):
-		pass
+		result = get(
+			"{}/standings".format(self.client.HOST_URL),
+			cookies=self.client.get_cookies(),
+		).json()
+		if not result["good"]:
+			raise RuntimeError(result["error"])
+		tasks, users = result["data"]
+		cols = [
+			"rank",
+			"user",
+			"score",
+			"penalty",
+		]
+		for name in tasks:
+			cols.append(name)
+		rows = []
+		for user in users:
+			row = [
+				user["rank"],
+				user["user"],
+				user["score"],
+				user["penalty"],
+			]
+			for task in user["tasks"]:
+				if task[0] == True:
+					if task[1]:
+						row.append("+{}".format(task[1]))
+					else:
+						row.append("+")
+				elif task[0] == False:
+					row.append("-{}".format(task[1]))
+				else:
+					row.append("")
+			rows.append(row)
+		print(tabulate(rows, cols, tablefmt="grid"))
 
 	def show_tasks(self):
 		result = get(

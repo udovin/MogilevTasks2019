@@ -10,6 +10,8 @@ from .models import Users
 app = Flask(__name__)
 users = Users()
 tasks = dict()
+start = None
+end = None
 
 
 def api_result(func):
@@ -144,7 +146,41 @@ def _check_task_output(name, output):
 @auth_required
 def get_standings():
 	rows = []
-
+	all_users = users.get_all_users()
+	for user in all_users:
+		row = dict(
+			rank=0,
+			user=user["login"],
+			score=0,
+			penalty=0,
+			tasks=list(),
+		)
+		for name in tasks.keys():
+			if name not in user["submits"]:
+				row["tasks"].append((None, 0))
+				continue
+			accepted, attempt = False, 0
+			for submit in user["submits"][name]:
+				if submit["is_accepted"]:
+					accepted = True
+					break
+				attempt += 1
+			row["tasks"].append((accepted, attempt))
+			if accepted:
+				row["score"] += 1
+				row["penalty"] += attempt * 20
+		rows.append(row)
+	rows = sorted(
+		rows,
+		key=lambda row: (-row["score"], row["penalty"])
+	)
+	rank = 0
+	prev_score, prev_penalty = None, None
+	for row in rows:
+		if row["penalty"] != prev_penalty or row["score"] != prev_score:
+			rank += 1
+		row["rank"] = rank
+	return list(tasks.keys()), rows
 
 def start():
 	app.run(port=4242)

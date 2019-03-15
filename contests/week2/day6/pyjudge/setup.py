@@ -12,5 +12,6 @@ setup(
 	install_requires=(
 		"requests",
 		"Flask",
+		"tabulate",
 	),
 )
