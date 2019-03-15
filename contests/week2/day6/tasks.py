@@ -2,24 +2,25 @@
 
 
 def dominoes_solution(n, k, a):
-    l = 0
-    ans = 0
-    for i in range(1, n):
-        k -= a[i] - a[i - 1] - 1
-        while k < 0:
-            k += a[l + 1] - a[l] - 1
-            l += 1
-        ans = max(ans, a[i] - a[l] + 1 + k)
-
-    while l < n - 1:
-        k += a[l + 1] - a[l] - 1
-        l += 1
-        ans = max(ans, a[i] - a[l] + 1 + k)
-    return ans
+	l = 0
+	ans = 0
+	for i in range(1, n):
+		k -= a[i] - a[i - 1] - 1
+		while k < 0:
+			k += a[l + 1] - a[l] - 1
+			l += 1
+		ans = max(ans, a[i] - a[l] + 1 + k)
+	while l < n - 1:
+		k += a[l + 1] - a[l] - 1
+		l += 1
+		ans = max(ans, a[i] - a[l] + 1 + k)
+	return ans
 
 
 def dominoes_generator():
-	return ((8, 4, [1, 2, 3, 4, 10, 11, 14, 15]),)
+	return (
+		(8, 4, [1, 2, 3, 4, 10, 11, 14, 15]),
+	)
 
 
 tasks = dict(
